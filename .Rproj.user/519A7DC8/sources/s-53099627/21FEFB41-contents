@@ -1,0 +1,26 @@
+
+gs <- CRopen(50,50,500,500)
+
+towait <- seq(from=5,to=25)
+outmat <- matrix(NaN, nrow=50, ncol=length(towait))
+
+for (i in 1:length(towait)) {
+    
+    for (t in 1:nrow(outmat)) {
+    
+        CRrender_present(gs)
+        
+        CRwait_ms(towait[i])
+        
+        before <- CRget_time(gs)
+        CRrender_present(gs, wait = TRUE)
+        after  <- CRget_time(gs)
+        
+        outmat[t, i] = after-before
+    }
+}
+CRclose(gs)
+
+
+windows()
+plot(apply(outmat, MARGIN=2, mean))

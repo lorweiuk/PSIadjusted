@@ -1,0 +1,9 @@
+Package: PSIadjusted
+Title: PSI adjusted method for the Stop-Signal Task.
+Version: 0.1
+Authors@R: person("Lorenz", "Weise", email = "lweise@ukaachen.de",
+                  role = c("aut", "cre"))
+Description: PSIadjusted provides a reaction-time adjusted PSI method for choosing SSDs and estimating SSRTs in the Stop-signal task.
+Depends: R (>= 3.1.0)
+License: GPL-2
+LazyData: true
